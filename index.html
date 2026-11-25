@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NETVORD Systems | Reparación, Soporte y Encargos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #050505;
+      color: #f4f4f5;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    .glass-card {
+      background: rgba(18, 18, 20, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .glass-card:hover {
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-white selection:text-black">
+
+  <!-- Barra Superior -->
+  <header class="sticky top-0 z-50 bg-black/90 backdrop-blur border-b border-zinc-800">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="img/logo.png" alt="NETVORD Systems" class="h-10 w-auto object-contain" onerror="this.style.display='none'" />
+        <span class="font-bold tracking-widest text-lg text-white">NETVORD</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-400">
+        <a href="#promo" class="hover:text-white transition">Promo Activa</a>
+        <a href="#cotizador" class="hover:text-white transition">Cotizar Reparación</a>
+        <a href="#encargos" class="hover:text-white transition">Encargos Online</a>
+        <a href="#ubicacion" class="hover:text-white transition">Taller</a>
+      </nav>
+      <a href="https://wa.me/522491106196?text=Hola%20NETVORD,%20me%20interesa%20informaci%C3%B3n%20sobre%20sus%20servicios."
+         target="_blank"
+         class="bg-white text-black font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg hover:bg-zinc-200 transition">
+        WhatsApp Directo
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Principal -->
+  <section class="max-w-5xl mx-auto px-4 pt-12 pb-10 text-center">
+    <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider uppercase border border-zinc-700 rounded-full text-zinc-300">
+      San Martín Caltenco, Puebla • Taller Físico
+    </div>
+    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+      Lealtad a la verdad técnica.<br />
+      <span class="text-zinc-400">Reparación real y compras seguras.</span>
+    </h1>
+    <p class="mt-4 max-w-2xl mx-auto text-zinc-400 text-base sm:text-lg">
+      Diagnóstico honesto para celulares y computadoras, además de encargos garantizados de tecnología y regalos sin miedo a estafas por internet.
+    </p>
+
+    <!-- Banner Promo Semanal -->
+    <div id="promo" class="mt-8 glass-card rounded-2xl p-6 max-w-3xl mx-auto text-left border-l-4 border-l-white">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">● Promoción por tiempo limitado</span>
+          <h2 class="text-xl font-bold text-white mt-1">Limpieza externa de puerto de carga y bocinas GRATIS</h2>
+          <p class="text-sm text-zinc-400 mt-1">
+            Trae tu celular al taller. Si requiere cambio de batería, pantalla o centro de carga, obtén descuento especial esta semana.
+          </p>
+        </div>
+        <a href="https://wa.me/522491106196?text=Hola%20NETVORD,%20quiero%20apartar%20mi%20limpieza%20GRATIS%20de%20puerto%20de%20carga%20y%20bocinas."
+           target="_blank"
+           class="shrink-0 bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm px-5 py-3 rounded-xl text-center transition">
+          Apartar Turno
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cotizador Interactivo de Reparaciones -->
+  <section id="cotizador" class="max-w-5xl mx-auto px-4 py-10">
+    <div class="glass-card rounded-2xl p-6 sm:p-8">
+      <h2 class="text-2xl font-bold text-white">Cotizador Rápido de Reparación</h2>
+      <p class="text-sm text-zinc-400 mt-1">Selecciona los datos de tu equipo y envía tu consulta directo a nuestro WhatsApp en un clic.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2">1. Tipo de equipo</label>
+          <select id="tipoEquipo" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+            <option value="Celular">Celular / Smartphone</option>
+            <option value="Laptop / PC">Laptop / Computadora</option>
+            <option value="Consola / Control">Consola / Control</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2">2. Marca y Modelo exacto</label>
+          <input id="modeloEquipo" type="text" placeholder="Ej. Samsung A54, Moto G60, HP Victus..."
+                 class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-white" />
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2">3. Falla o servicio</label>
+          <select id="servicioEquipo" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+            <option value="Limpieza gratuita de puerto y bocinas">Limpieza externa gratis (puerto/bocinas)</option>
+            <option value="Cambio de pantalla">Cambio de pantalla</option>
+            <option value="Cambio de batería">Cambio de batería</option>
+            <option value="Cambio de centro de carga">Cambio de centro de carga</option>
+            <option value="Mantenimiento / Pasta térmica / Optimización">Mantenimiento y optimización (Laptop/PC)</option>
+            <option value="Desbloqueo / Software">Desbloqueo o falla de sistema</option>
+            <option value="Otro diagnóstico">Otro problema (revisión técnica)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2">4. Detalle breve (opcional)</label>
+          <input id="detalleEquipo" type="text" placeholder="Ej. Se cayó y no da imagen, carga lento..."
+                 class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-white" />
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-col sm:flex-row gap-3">
+        <button onclick="enviarCotizacion(1)"
+                class="flex-1 bg-white text-black font-bold py-3.5 px-6 rounded-xl hover:bg-zinc-200 transition">
+          Enviar Cotización (WhatsApp Taller 1)
+        </button>
+        <button onclick="enviarCotizacion(2)"
+                class="flex-1 bg-zinc-800 text-white font-semibold py-3.5 px-6 rounded-xl border border-zinc-700 hover:bg-zinc-700 transition">
+          Enviar Cotización (WhatsApp Taller 2)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Puente de Compras / Encargos -->
+  <section id="encargos" class="max-w-5xl mx-auto px-4 py-10">
+    <div class="mb-6">
+      <h2 class="text-2xl font-bold text-white">Encargos Seguros de Internet</h2>
+      <p class="text-sm text-zinc-400 mt-1">¿Viste un celular, accesorio o juguete en Mercado Libre o Amazon pero no quieres arriesgar tu dinero en línea? Nosotros lo pedimos por ti.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="glass-card rounded-2xl p-5">
+        <div class="text-xs font-bold text-zinc-400 uppercase">Paso 01</div>
+        <h3 class="text-lg font-bold text-white mt-1">Elige tu producto</h3>
+        <p class="text-sm text-zinc-400 mt-2">Mándanos foto o enlace del celular, audífonos, refacción o juguete para Santa y Reyes Magos.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-5">
+        <div class="text-xs font-bold text-zinc-400 uppercase">Paso 02</div>
+        <h3 class="text-lg font-bold text-white mt-1">Aparta en efectivo</h3>
+        <p class="text-sm text-zinc-400 mt-2">Das tu anticipo directamente aquí en el local con comprobante y sin necesitar tarjetas bancarias.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-5">
+        <div class="text-xs font-bold text-zinc-400 uppercase">Paso 03</div>
+        <h3 class="text-lg font-bold text-white mt-1">Recoge con garantía</h3>
+        <p class="text-sm text-zinc-400 mt-2">Revisamos el paquete contigo al entregarlo y cuentas con el respaldo presencial de nuestro taller.</p>
+      </div>
+    </div>
+
+    <div class="mt-6 glass-card rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <h3 class="font-bold text-white">¿Buscas cotizar un celular nuevo, accesorio o juguete por encargo?</h3>
+        <p class="text-sm text-zinc-400">Escríbenos qué necesitas y te damos precio final puesto en San Martín Caltenco.</p>
+      </div>
+      <a href="https://wa.me/522491411866?text=Hola%20NETVORD,%20quiero%20cotizar%20un%20encargo%20de%20internet."
+         target="_blank"
+         class="shrink-0 bg-white text-black font-bold text-sm px-5 py-3 rounded-xl hover:bg-zinc-200 transition">
+        Cotizar Encargo
+      </a>
+    </div>
+  </section>
+
+  <!-- Ubicación y Respaldo Físico -->
+  <section id="ubicacion" class="max-w-5xl mx-auto px-4 py-10">
+    <div class="glass-card rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+      <div class="p-6 sm:p-8 flex flex-col justify-center">
+        <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">Visítanos en persona</span>
+        <h2 class="text-2xl font-bold text-white mt-1">Taller NETVORD Systems</h2>
+        <p class="text-sm text-zinc-300 mt-3">
+          📍 <strong>Av. Miguel Hidalgo #101</strong>, Centro, San Martín Caltenco, Puebla.<br />
+          <span class="text-zinc-400">(Justo frente a la Primaria 16 de Septiembre)</span>
+        </p>
+        <div class="mt-4 space-y-1 text-sm text-zinc-400">
+          <p>📱 WhatsApp 1: <strong class="text-white">249 110 6196</strong></p>
+          <p>📱 WhatsApp 2: <strong class="text-white">249 141 1866</strong></p>
+        </div>
+      </div>
+      <div class="bg-zinc-900 min-h-[240px]">
+        <img src="img/local.jpg" alt="Fachada Taller NETVORD" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'p-8 text-center text-zinc-500 text-sm\'>Coloca la foto de tu local como img/local.jpg</div>'" />
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-zinc-900 py-8 text-center text-xs text-zinc-500">
+    © 2026 NETVORD (Network Vordun Systems) • San Martín Caltenco, Puebla.
+  </footer>
+
+  <script>
+    function enviarCotizacion(linea) {
+      const tipo = document.getElementById('tipoEquipo').value;
+      const modelo = document.getElementById('modeloEquipo').value.trim() || 'No especificado';
+      const servicio = document.getElementById('servicioEquipo').value;
+      const detalle = document.getElementById('detalleEquipo').value.trim();
+
+      const telefono = linea === 1 ? '522491106196' : '522491411866';
+      let mensaje = `Hola NETVORD, quiero cotizar desde su web:\n• Equipo: ${tipo}\n• Modelo: ${modelo}\n• Servicio: ${servicio}`;
+      if (detalle) {
+        mensaje += `\n• Detalle: ${detalle}`;
+      }
+
+      const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
